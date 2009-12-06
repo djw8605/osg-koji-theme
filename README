@@ -1,0 +1,4 @@
+This package is a simple theme that makes Koji's web interface look like Brew
+
+It works by overriding parts of the /koji-static tree in the httpd config,
+replacing some of that content with our own.
