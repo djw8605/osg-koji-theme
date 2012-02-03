@@ -1,4 +1,4 @@
-%define baserelease 2
+%define baserelease 1
 #build with --define 'testbuild 1' to have a timestamp appended to release
 %if 0%{?testbuild}
 %define release %{baserelease}.%(date +%%Y%%m%%d.%%H%%M.%%S)
@@ -6,12 +6,12 @@
 %define release %{baserelease}
 %endif
 Name: koji-theme-fedora
-Version: 1.3
+Version: 2.0
 Release: %{release}%{?dist}
 License: GPLv2
 Summary: Fedora koji theme
 Group: Applications/Internet
-Source: %{name}-%{PACKAGE_VERSION}.tar.bz2
+Source: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Requires: koji-web
@@ -39,6 +39,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Feb 03 2012 Dennis Gilmore <dennis@ausil.us> 2.0-1
+- pull in theme from ryan
+
 * Mon Aug 24 2009 Dennis Gilmore <dennis@ausil.us> - 1.3-2
 - add powered by koji button. 
 - use new logo
